@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/c3woc/c3woc-podcast.svg?branch=master)](https://travis-ci.org/c3woc/c3woc-podcast)
-![C3WOC](https://c3woc.de/images/logo/podcast.svg "C3WOC")
+![C3WOC](https://c3woc.de/images/podcast.svg "C3WOC")
 
 Status
 ------------
