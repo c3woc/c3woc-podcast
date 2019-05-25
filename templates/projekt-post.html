@@ -1,28 +1,21 @@
 {% extends "layout.html" %}
-{% from "macros/blog.html" import render_blog_post %}
-{% if this.project %}{% block expand_header %}
+{% from "macros/projekt.html" import render_blog_post %}
+{% block expand_header %}
 <link href="{{ '/css/lightgallery.css'|url }}" rel="stylesheet">
 {% if this.video_is_embeded %} <!-- Embed Video -->
 <script src="{{ '/js/webcomponents.min.js'|url }}"></script/>
 <link rel="import" href="{{ '/youtube-embed.html'|url }}"> {% endif %}
-{% endblock %}{% endif %}
-{% block title %}{{ this.title }}{% endblock %}
-{% block expand_ogg_image %}"{% if this.xml_img %}{{ this.xml_img|url }}{% else %}{{ '/images/waffel.jpeg'|asseturl }}{% endif %}"{% endblock %}
+{% endblock %}
 {% block expand_description %}
     <meta name="description" content="{% 
-        if this.xml %}{{ this.xml }}{% else %}{%
+        if this.teaser %}{{ this.teaser }}{% else %}{%
             if bag('translate', this.alt, 'description') %}{{ bag('translate', this.alt, 'description') }}{% 
             else %}{{ bag('translate', 'de', 'description') }}{% endif %}
         {% endif %}" />
 {% endblock %}
-{% block body %}
-<!-- Main -->
-<div id="main" class="wrapper style1">
-  <div class="container">
-    {{ render_blog_post(this) }}
-  </div>
-</div>
-{% if this.project %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}          
+  {{ render_blog_post(this) }}
   <script type="text/javascript">
     $(document).ready(function(){
       $('#lightgallery').lightGallery();
@@ -32,5 +25,4 @@
   <script src="{{ '/js/picturefill.min.js'|url }}"></script>
   <script src="{{ '/js/lightgallery-all.min.js'|url }}"></script>
   <script src="{{ '/js/jquery.mousewheel.min.js'|url }}"></script>
-{% endif %}
 {% endblock %}
