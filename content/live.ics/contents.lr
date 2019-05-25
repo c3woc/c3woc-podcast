@@ -1,0 +1,22 @@
+_template: waffeln.ics
+---
+_model: waffeln
+---
+title: C3WOC Podcast Liveauftritte
+---
+termine:
+
+#### termine ####
+start: 2019-06-14 13:37:42 Europe/Berlin
+----
+ende: 2019-06-16 17:23:42 Europe/Berlin
+----
+event: CoSin
+----
+ort: Biel/Bienne
+----
+url: https://cosin.ch
+----
+description: Chaos Singularity (CoSin) ist ein jährlicher Event des Schweizer Chaos. Der Inhalt erstreckt sich über Technik und Politik zu Kunst und Kultur.|Bis hinein in die heilige Kunst der Waffel- und Glacce zubereitung.
+----
+confirmed: yes
