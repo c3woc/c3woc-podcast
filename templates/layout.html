@@ -50,6 +50,49 @@
     <div id="page-wrapper">
        <!-- Header -->
        <header id="header">
+            <h1 id="logo">{#
+
+
+
+            Hier findet sich der "Waffel Status" der Webseite.
+            Wenn das CSS sagt, dass es Waffeln gibt, 
+            dann wird die Webseite grün und es gibt Waffeln.
+
+            Wenn nicht... nicht!
+
+            Das ganze wird über die SpaceAPI gesteuert.
+            Auch wenn das C3WOC kein echter Hackerspace ist...
+            Aber die Webseite ist dreist von der Toolbox kopiert worden.
+
+
+
+                #}
+                <div class="tooltip">
+                    <a id="waffel-available" class="button waffel-available navbar special" href="{%
+                        if bag('translate', this.alt, 'api_url_open') %}{{ bag('translate', this.alt, 'api_url_open') }}{%
+                        else %}{{ bag('translate', 'de', 'api_url_open') }}{% endif 
+                    %}">{%
+                        if bag('translate', this.alt, 'api_space') %}{{ bag('translate', this.alt, 'api_space') }}{%
+                        else %}{{ bag('translate', 'de', 'api_space') }}{% endif %} {%
+                        if bag('translate', this.alt, 'api_open') %}{{ bag('translate', this.alt, 'api_open') }}{%
+                        else %}{{ bag('translate', 'de', 'api_open') }}{% endif %}</a>
+                    <span class="tooltiptext">{% if bag('translate', this.alt, 'api_open_text') 
+                        %}{{ bag('translate', this.alt, 'api_open_text') }}{%
+                        else %}{{ bag('translate', 'de', 'api_open_text') }}{% endif %}</span>
+                </div>
+                <div class="tooltip">
+                    <a id="no-waffles" class="no-waffles" href="{% if bag('translate', this.alt, 'api_url') %}{{ bag('translate', this.alt, 'api_url') }}{%
+                        else %}{{ bag('translate', 'de', 'api_url') }}{% endif 
+                    %}">{% 
+                        if bag('translate', this.alt, 'api_space') %}{{ bag('translate', this.alt, 'api_space') }}{%
+                        else %}{{ bag('translate', 'de', 'api_space') }}{% 
+                        endif %} {% if bag('translate', this.alt, 'api_closed') %}{{ bag('translate', this.alt, 'api_closed') }}{% 
+                        else %}{{ bag('translate', 'de', 'api_closed') }}{% endif %}</a>
+                    <span class="tooltiptext">{% if bag('translate', this.alt, 'api_opening_time') 
+                        %}{{ bag('translate', this.alt, 'api_opening_time') }}{% 
+                        else %}{{ bag('translate', 'de', 'api_opening_time') }}{% endif %}</span>
+                  </div>
+            </h1>
             <nav id="nav">{#
 
 
