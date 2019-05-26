@@ -1,8 +1,8 @@
 _model: start
 ---
-title: C3 Waffel Operation Center
+title: Das heisse Eisen
 ---
-slogan: Wir machen Waffeln!
+slogan: Der Podcast mit Venty und L3D
 ---
 about_header: Die Waffel Formel
 ---
@@ -91,11 +91,11 @@ icons_1_url: https://c3coc.de
 ---
 icons_3_url: /rezepte/
 ---
-hinweis: Wenn du Lust hast, dann
+hinweis: Über Waffeln und das
 ---
-hinweis_txt: mach mit!
+hinweis_txt: C3WOC
 ---
-hinweis_url: /mitmachen/
+hinweis_url: https://c3woc.de/
 ---
 sections:
 
