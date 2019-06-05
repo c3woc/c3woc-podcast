@@ -16,12 +16,12 @@ about_url: Waffel Rezepturen
 ---
 about_url2: /rezept/
 ---
-icons_header: Wo kannst du uns treffen?
+icons_header: Der nächste LIVE Termin
 ---
 icons_text:
 
-Das C3WOC erfreut sich einer großen Beliebtheit. Besonders im Umkreis des Chaos Computer Club und Chaos nahen Veranstaltungen.<br/>
-Selbstverständlich sollen dort Waffeln nicht fehlen!
+Du kannst nicht nur den RSS Feed abonieren, sondern du darfst auch  live bei der entstehung einer Podcast folge zuhören.<br/>
+Sobald neue Termine feststehen, findest du die hier:
 ---
 icons_1_1: fas fa-heart
 ---
@@ -68,24 +68,17 @@ icons_6_3: Das C3WOC kommt gerne zu chaosnahen Veranstaltungen, um dort mit euch
 ---
 icons_6_url: https://c3woc.de/#tourdaten
 ---
-icons_txt: Werde Teil des C3WOC
+icons_txt: Werde Gast im Podcast
 ---
-icons_url: https://c3woc.de/mitmachen/
+icons_url: https://c3woc.de/kontakt/
 ---
-red_1: Wir freuen uns über neue Gesichter.
+red_1: Wir freuen uns über neue Stimmen
 ---
-red_2:
-
-Alleine Waffeln zu backen ist langweilig und mit der Zeit echt anstrengend. Aber zusammen macht das gleich viel mehr Spaß.
-Wenn mehr Menschen mitmachen, wird das backen, Planen, Organisieren und essen von Waffeln zu einem super Erlebnis.
+red_2: Hast du nicht auch etwas über Waffeln zu erzählen?
 ---
-red_3:
-
-Wir würden uns sehr über mehr aktive Leute, die Spaß an Waffeln haben freuen. Denn nur mit wenigen Menschen etwas zu Planen und durchzuführen ist anstrengend und funktioniert nicht für unbegrenzte Zeit.
-
-Bitte mach bei uns mit!
+red_3: Dann mach das doch! Direkt hier mit uns zusammen im Waffelpodcast!
 ---
-red_4: Wir brauchen deine Unterstützung!
+red_4: Sei unser Gast. Und iss mit!
 ---
 icons_1_url: https://c3coc.de
 ---
@@ -97,52 +90,12 @@ hinweis_txt: C3WOC
 ---
 hinweis_url: https://c3woc.de/
 ---
-sections:
-
-#### startpage_section ####
-type: right
-----
-header: Der Waffelblog
-----
-text: Wenn du interessiert bist an Bildern und etwas Text zu Veranstaltungen, bei denen das C3WOC involviert ist oder anderen Aktionen, bei denen gewaffelt wurde oder es um Waffeln geht, dann schau doch mal in den C3WOC Blog.
-----
-text2:
-
-Wir würden auch einen Bericht von deinen Waffel-Aktionen dort sehr gerne lesen!
-
-Sprich uns hierfür einfach an oder noch besser: Mach einen Pull-Request auf der [Webseite](https://github.com/ToolboxBodensee/c3woc-webseite).
-----
-url_text: Waffel-Blog
-----
-url: /blog/
-----
-background: /images/home/abschnitt2.jpeg
-#### startpage_section ####
-type: left
-----
-header: Equipment
-----
-text:
-
-Für die perfekte Waffel gibt es einige Abhängigkeiten.<br/>
-Eine davon ist ganz klar das Waffeleisen.
-----
-text2: Hier setzt das C3WOC auf professionelles Gastronomie Equipment.
-----
-url_text: Waffellager
-----
-url: /equipment/
-----
-background: /images/home/abschnitt3.jpeg
+sections: 
 ---
 render_tourdaten: yes
 ---
-icons_header_2: Worum geht es bei den Waffeln
+icons_header_2: Waffel nicht nur schmecken
 ---
-icons_text_2:
-
-Das C3WOC macht nicht einfach Waffeln, die man für Geld kaufen kann. 
-
-<b>Sondern es geht um viel mehr!</b>
+icons_text_2: Durch den Waffelpodcast ist es nun endlich auch möglich, die Waffel nicht nur zu sehen, zu fühlen und zu schmecken, sondern auch akustisch vorgestellt zu bekommen.
 ---
 icons_2_url: https://www.ccc.de/de/regional
