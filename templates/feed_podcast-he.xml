@@ -22,7 +22,8 @@ set search = "eisen" %}
     <author>
       <name>{% if page.author %}{{ page.author }}{% else %}L3D{% endif %}</name>
     </author>
-    <content type="{% if page.xml_img %}html{% else %}text{% endif %}">
+{#- <content type="{% if page.xml_img %}html{% else %}text{% endif %}"> #}
+    <content type="html">
         {{ page.xml }} 
       {%- if page.xml_img -%}
       &lt;img width=&quot;23%&quot; src=&quot;{{ page.xml_img }}&quot; /&gt;
