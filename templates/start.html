@@ -9,6 +9,9 @@
       <h2>{{ this.title }}</h2>
       <p>{{ this.slogan }}</p>
       <p>{{ this.hinweis }} {% if this.hinweis_txt %}<a href="{% if this.hinweis_url %}{{this.hinweis_url }}{% else %}#four{% endif %}">{{ this.hinweis_txt }}</a>{% endif %}</p>
+      {%- if this.mp3feed %}
+      <br/><a href="/podcast_he.xml" class="button special">Podcast RSS Feed</a>
+      {%- endif %}
     </header>
     <span class="image"> 
       <img src="{{ '/images/logo.svg'|url }}" alt="" />
