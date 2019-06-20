@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 {%- set baseurl = "https://podcast.c3woc.de/" %}{%
 set search = "eisen" %}
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title type="text">{%
-        if bag('translate', this.alt, 'hefeed') %}{{ bag('translate', this.alt, 'hefeed') }}{%
-        else %}Das heisse Eisen{% endif %}</title>
-  <id>{{ baseurl }}podcast-he.xml</id>
-  <updated>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title type="text">
+      {%- if bag('translate', this.alt, 'hefeed') -%}
+        {{ bag('translate', this.alt, 'hefeed') }}
+      {%- else -%}
+        Das heisse Eisen
+      {%- endif -%}</title>
+    <link>{{ baseurl }}</link>
+    <id>{{ baseurl }}podcast-he.xml</id>
+    <description>Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.</description>
+    <generator>Von Hand als jinja2 template geschrieben</generator>
+    <language>de</language>
+    <copyright>L3D</copyright>
+    <updated>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
+    <pubDate>Wed, 07 Mar 2007 16:48:22 +0100</pubDate>
+    <lastBuildDate>Wed, 07 Mar 2007 16:48:22 +0100</lastBuildDate>
+    <itunes:author>Martin Ebnoether</itunes:author>
+    <itunes:subtitle>Ventys Podcast</itunes:subtitle>
+    <itunes:summary>Das ist der Podcast von Ventilator</itunes:summary>
+    <itunes:keywords>Venty, Ventilator, Semmel, Podcast</itunes:keywords>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>Martin Ebnoether</itunes:name>
+      <itunes:email>ventilator@semmel.ch</itunes:email>
+    </itunes:owner>
+<itunes:new-feed-url>http://www.semmel.ch/podcast/der-podcast.xml</itunes:new-feed-url>
+    <itunes:block>no</itunes:block>
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Personal Journals"/>
+    </itunes:category>
+    <item>
+      <title>Folge 001 - Start mit Hindernissen!</title>
+      <link>http://www.semmel.ch/podcast/Podcast-Folge-001.mp3</link>
+      <author>ventilator@semmel.ch</author>
+      <pubDate>Wed, 22 Nov 2006 21:23:17 +0100</pubDate>
+      <enclosure url="http://www.semmel.ch/podcast/Podcast-Folge-001.mp3" length="2307405" type="audio/mpeg"/>
+      <guid isPermaLink="false">Venty-001</guid> 
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+
+
+
+
+
+
   <link href="{{ baseurl }}{{ search }}/" />
   <link href="{{ baseurl }}podcast-he.xml" rel="self" />
   <author>
