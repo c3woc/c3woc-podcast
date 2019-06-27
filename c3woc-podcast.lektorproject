@@ -24,4 +24,4 @@ locale = en_US
 url_prefix = /en/
 
 [packages]
-lektor-scsscompile = 1.0.1
+lektor-scsscompile = 1.1
