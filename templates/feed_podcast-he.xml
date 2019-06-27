@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-{%- set baseurl = "https://podcast.c3woc.de/" %}{%
-set search = "eisen" %}
+{%- set baseurl = "https://podcast.c3woc.de" %}
+{%- set search = "eisen" %}
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title type="text">
@@ -9,68 +9,74 @@ set search = "eisen" %}
       {%- else -%}
         Das heisse Eisen
       {%- endif -%}</title>
-    <link>{{ baseurl }}</link>
-    <id>{{ baseurl }}podcast-he.xml</id>
-    <description>Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.</description>
-    <generator>Von Hand als jinja2 template geschrieben</generator>
+    <link>{{ baseurl }}/</link>
+    <id>{{ baseurl }}/podcast-he.xml</id>
+    <description>
+      {%- if bag('translate', this.alt, 'hefeed_description') -%}
+        {{ bag('translate', this.alt, 'hefeed_description') }}
+      {%- else -%}
+        Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
+      {%- endif -%}
+    </description>
+    <generator>Von Hand als Jinja2 Template von L3D geschrieben</generator>
     <language>de</language>
     <copyright>L3D</copyright>
     <updated>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
-    <pubDate>Wed, 07 Mar 2007 16:48:22 +0100</pubDate>
-    <lastBuildDate>Wed, 07 Mar 2007 16:48:22 +0100</lastBuildDate>
-    <itunes:author>Martin Ebnoether</itunes:author>
-    <itunes:subtitle>Ventys Podcast</itunes:subtitle>
-    <itunes:summary>Das ist der Podcast von Ventilator</itunes:summary>
-    <itunes:keywords>Venty, Ventilator, Semmel, Podcast</itunes:keywords>
-    <itunes:explicit>no</itunes:explicit>
-    <itunes:owner>
-      <itunes:name>Martin Ebnoether</itunes:name>
-      <itunes:email>ventilator@semmel.ch</itunes:email>
-    </itunes:owner>
-<itunes:new-feed-url>http://www.semmel.ch/podcast/der-podcast.xml</itunes:new-feed-url>
-    <itunes:block>no</itunes:block>
-    <itunes:category text="Society &amp; Culture">
-      <itunes:category text="Personal Journals"/>
-    </itunes:category>
-    <item>
-      <title>Folge 001 - Start mit Hindernissen!</title>
-      <link>http://www.semmel.ch/podcast/Podcast-Folge-001.mp3</link>
-      <author>ventilator@semmel.ch</author>
-      <pubDate>Wed, 22 Nov 2006 21:23:17 +0100</pubDate>
-      <enclosure url="http://www.semmel.ch/podcast/Podcast-Folge-001.mp3" length="2307405" type="audio/mpeg"/>
-      <guid isPermaLink="false">Venty-001</guid> 
-      <itunes:explicit>no</itunes:explicit>
-    </item>
-
-
-
-
-
-
-  <link href="{{ baseurl }}{{ search }}/" />
-  <link href="{{ baseurl }}podcast-he.xml" rel="self" />
-  <author>
-    <name>{% if this.author %}{{ this.author }}{% else %}Venty und L3D{% endif %}</name>
-  </author>{%
-  set pages = site.query('/eisen').include_undiscoverable(true).all() %}{%
-  for page in pages %}{% if not page._hidden %}
-  <entry xml:base="{{ baseurl }}{{ search }}/{{ page._id }}/">
-    <title type="text">{{ page.title }}</title>
-    <id>{{ baseurl }}{{ search }}/{{ page._id }}</id>
-    <updated>{{ page.pub_date|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
-    <link href="{{ search }}/{{ page._id }}/" xml:base="{{ baseurl }}" />
-    <author>
-      <name>{% if page.author %}{{ page.author }}{% else %}L3D{% endif %}</name>
-    </author>
-{#- <content type="{% if page.xml_img %}html{% else %}text{% endif %}"> #}
-    <content type="html">
-        {{ page.xml }} 
-      {%- if page.xml_img -%}
-      &lt;img width=&quot;23%&quot; src=&quot;{{ page.xml_img }}&quot; /&gt;
-      {% endif %}
-      &lt;br/&gt;&lt;a href="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" class="button special primary" download&gt;{{ page.shorttitle }} - MP3 Downloaded&lt;/a&gt;
-    </content>
-	<enclosure url="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" type="audio/mpeg" />
-</entry>{% endif %}{%
-endfor %}
-</feed>
+      {%- set pages = site.query('/eisen').include_undiscoverable(true).all() -%}
+      {%- for page in pages -%}
+        {%- if not page._hidden %}
+{#  #}    <pubDate>2019-</pubDate>
+{#  #}    <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
+{#  #}    <itunes:author>L3D</itunes:author>
+{#  #}    <itunes:subtitle>Ventys Podcast</itunes:subtitle>
+{#  #}    <itunes:summary>
+            {%- if bag('translate', this.alt, 'hefeed_description') -%}
+              {{ bag('translate', this.alt, 'hefeed_description') }}
+            {%- else -%}
+              Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
+            {%- endif -%}
+          </itunes:summary>
+{#  #}    <itunes:keywords>
+            {%- if bag('translate', this.alt, 'hefeed_keywords') -%}
+              {{ bag('translate', this.alt, 'hefeed_keywords') }}
+            {%- else -%}
+              Waffel, C3WOC, CCC, Chaos, Waffle, Waffles, Waffeln, VOC, WOC, Operation, Center
+            {%- endif -%}
+          </itunes:keywords>
+{#  #}    <itunes:explicit>no</itunes:explicit>
+{#  #}    <itunes:owner>
+{#  #}      <itunes:name>L3D</itunes:name>
+{#  #}      <itunes:email>l3d@c3woc.de</itunes:email>
+{#  #}    </itunes:owner>
+{#  #}    <itunes:new-feed-url>{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
+{#  #}    <itunes:block>no</itunes:block>
+{#  #}    <itunes:category text="Waffel">
+{#  #}    <itunes:category text="Chaos"/>
+{#  #}    <itunes:category text="CCC"/>
+{#  #}    </itunes:category>
+{#  #}    <item>
+{#  #}      <title>{{ page.title }}</title>
+{#  #}      <link>{{ baseurl }}/{{ search }}/{{ page._id }}/</link>
+{#  #}      <author>
+              {%- if page.author -%}
+                {{ page.author }}
+              {%- else -%}
+                L3D und Venty
+              {%- endif -%}
+            </author>
+{#  #}      <pubDate>{{ page.pub_date|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</pubDate>
+{#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" length="2307405" type="audio/mpeg"/>
+{#  #}      <guid isPermaLink="false">{{ page._id }}</guid> 
+{#  #}      <itunes:explicit>no</itunes:explicit>
+{#  #}      <content type="{% if page.xml_img %}html{% else %}text{% endif %}">
+              {{ page.xml }} 
+            {%- if page.xml_img -%}
+              &lt;img width=&quot;23%&quot; src=&quot;{{ page.xml_img }}&quot; /&gt;
+            {% endif %}
+              &lt;br/&gt;&lt;a href="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" class="button special primary" download&gt;{{ page.shorttitle }} - MP3 Downloaded&lt;/a&gt;
+            </content>
+{#  #}    </item>
+        {%- endif -%}
+      {%- endfor %}
+  </channel>
+</rss>
