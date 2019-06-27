@@ -1,35 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-{%- set baseurl = "https://podcast.c3woc.de/" %}{%
-set search = "eisen" %}
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title type="text">{%
-        if bag('translate', this.alt, 'hefeed') %}{{ bag('translate', this.alt, 'hefeed') }}{%
-        else %}Das heisse Eisen{% endif %}</title>
-  <id>{{ baseurl }}podcast-he.xml</id>
-  <updated>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
-  <link href="{{ baseurl }}{{ search }}/" />
-  <link href="{{ baseurl }}podcast-he.xml" rel="self" />
-  <author>
-    <name>{% if this.author %}{{ this.author }}{% else %}Venty und L3D{% endif %}</name>
-  </author>{%
-  set pages = site.query('/eisen').include_undiscoverable(true).all() %}{%
-  for page in pages %}{% if not page._hidden %}
-  <entry xml:base="{{ baseurl }}{{ search }}/{{ page._id }}/">
-    <title type="text">{{ page.title }}</title>
-    <id>{{ baseurl }}{{ search }}/{{ page._id }}</id>
-    <updated>{{ page.pub_date|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
-    <link href="{{ search }}/{{ page._id }}/" xml:base="{{ baseurl }}" />
-    <author>
-      <name>{% if page.author %}{{ page.author }}{% else %}L3D{% endif %}</name>
-    </author>
-    <content type="{% if page.xml_img %}html{% else %}text{% endif %}">
-        {{ page.xml }} 
-      {%- if page.xml_img -%}
-      &lt;img width=&quot;23%&quot; src=&quot;{{ page.xml_img }}&quot; /&gt;
-      {% endif %}
-      &lt;br/&gt;&lt;a href="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" class="button special primary" download&gt;{{ page.shorttitle }} - MP3 Downloaded&lt;/a&gt;
-    </content>
-	<enclosure url="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" type="audio/mpeg" />
-</entry>{% endif %}{%
-endfor %}
-</feed>
+{%- set baseurl = "https://podcast.c3woc.de" %}
+{%- set search = "eisen" %}
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title type="text">
+      {%- if bag('translate', this.alt, 'hefeed') -%}
+        {{ bag('translate', this.alt, 'hefeed') }}
+      {%- else -%}
+        Das heisse Eisen
+      {%- endif -%}</title>
+    <link>{{ baseurl }}/</link>
+    <id>{{ baseurl }}/podcast-he.xml</id>
+    <description>
+      {%- if bag('translate', this.alt, 'hefeed_description') -%}
+        {{ bag('translate', this.alt, 'hefeed_description') }}
+      {%- else -%}
+        Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
+      {%- endif -%}
+    </description>
+    <generator>Von Hand als Jinja2 Template von L3D geschrieben</generator>
+    <language>de</language>
+    <copyright>L3D</copyright>
+    <updated>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
+      {%- set pages = site.query('/eisen').include_undiscoverable(true).all() -%}
+      {%- for page in pages -%}
+        {%- if not page._hidden %}
+{#  #}    <pubDate>2019-</pubDate>
+{#  #}    <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
+{#  #}    <itunes:author>L3D</itunes:author>
+{#  #}    <itunes:subtitle>Ventys Podcast</itunes:subtitle>
+{#  #}    <itunes:summary>
+            {%- if bag('translate', this.alt, 'hefeed_description') -%}
+              {{ bag('translate', this.alt, 'hefeed_description') }}
+            {%- else -%}
+              Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
+            {%- endif -%}
+          </itunes:summary>
+{#  #}    <itunes:keywords>
+            {%- if bag('translate', this.alt, 'hefeed_keywords') -%}
+              {{ bag('translate', this.alt, 'hefeed_keywords') }}
+            {%- else -%}
+              Waffel, C3WOC, CCC, Chaos, Waffle, Waffles, Waffeln, VOC, WOC, Operation, Center
+            {%- endif -%}
+          </itunes:keywords>
+{#  #}    <itunes:explicit>no</itunes:explicit>
+{#  #}    <itunes:owner>
+{#  #}      <itunes:name>L3D</itunes:name>
+{#  #}      <itunes:email>l3d@c3woc.de</itunes:email>
+{#  #}    </itunes:owner>
+{#  #}    <itunes:new-feed-url>{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
+{#  #}    <itunes:block>no</itunes:block>
+{#  #}    <itunes:category text="Waffel">
+{#  #}    <itunes:category text="Chaos"/>
+{#  #}    <itunes:category text="CCC"/>
+{#  #}    </itunes:category>
+{#  #}    <item>
+{#  #}      <title>{{ page.title }}</title>
+{#  #}      <link>{{ baseurl }}/{{ search }}/{{ page._id }}/</link>
+{#  #}      <author>
+              {%- if page.author -%}
+                {{ page.author }}
+              {%- else -%}
+                L3D und Venty
+              {%- endif -%}
+            </author>
+{#  #}      <pubDate>{{ page.pub_date|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</pubDate>
+{#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" length="2307405" type="audio/mpeg"/>
+{#  #}      <guid isPermaLink="false">{{ page._id }}</guid> 
+{#  #}      <itunes:explicit>no</itunes:explicit>
+{#  #}      <content type="{% if page.xml_img %}html{% else %}text{% endif %}">
+              {{ page.xml }} 
+            {%- if page.xml_img -%}
+              &lt;img width=&quot;23%&quot; src=&quot;{{ page.xml_img }}&quot; /&gt;
+            {% endif %}
+              &lt;br/&gt;&lt;a href="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" class="button special primary" download&gt;{{ page.shorttitle }} - MP3 Downloaded&lt;/a&gt;
+            </content>
+{#  #}    </item>
+        {%- endif -%}
+      {%- endfor %}
+  </channel>
+</rss>
