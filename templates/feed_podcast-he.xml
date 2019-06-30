@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 {%- set baseurl = "https://podcast.c3woc.de" %}
 {%- set search = "eisen" %}
+<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title type="text">
@@ -23,37 +23,42 @@
     <copyright>L3D</copyright>
     <updated>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
       {%- set pages = site.query('/eisen').include_undiscoverable(true).all() -%}
+      {%- set firstrun = true %}
       {%- for page in pages -%}
         {%- if not page._hidden %}
-{#  #}    <pubDate>2019-</pubDate>
-{#  #}    <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
-{#  #}    <itunes:author>L3D</itunes:author>
-{#  #}    <itunes:subtitle>Ventys Podcast</itunes:subtitle>
-{#  #}    <itunes:summary>
-            {%- if bag('translate', this.alt, 'hefeed_description') -%}
-              {{ bag('translate', this.alt, 'hefeed_description') }}
-            {%- else -%}
-              Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
-            {%- endif -%}
-          </itunes:summary>
-{#  #}    <itunes:keywords>
-            {%- if bag('translate', this.alt, 'hefeed_keywords') -%}
-              {{ bag('translate', this.alt, 'hefeed_keywords') }}
-            {%- else -%}
-              Waffel, C3WOC, CCC, Chaos, Waffle, Waffles, Waffeln, VOC, WOC, Operation, Center
-            {%- endif -%}
-          </itunes:keywords>
-{#  #}    <itunes:explicit>no</itunes:explicit>
-{#  #}    <itunes:owner>
-{#  #}      <itunes:name>L3D</itunes:name>
-{#  #}      <itunes:email>l3d@c3woc.de</itunes:email>
-{#  #}    </itunes:owner>
-{#  #}    <itunes:new-feed-url>{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
-{#  #}    <itunes:block>no</itunes:block>
-{#  #}    <itunes:category text="Waffel">
-{#  #}    <itunes:category text="Chaos"/>
-{#  #}    <itunes:category text="CCC"/>
-{#  #}    </itunes:category>
+          {%- if firstrun == true %}
+{#  #}      <pubDate>2019-06-14T00:42:23Z</pubDate>
+{#  #}      <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
+{#  #}      <itunes:author>L3D</itunes:author>
+{#  #}      <itunes:subtitle>Der Podcast des CCC Waffel Operation Center</itunes:subtitle>
+{#  #}      <itunes:summary>
+              {%- if bag('translate', this.alt, 'hefeed_description') -%}
+                {{ bag('translate', this.alt, 'hefeed_description') }}
+              {%- else -%}
+                Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
+              {%- endif -%}
+            </itunes:summary>
+{#  #}      <itunes:keywords>
+              {%- if bag('translate', this.alt, 'hefeed_keywords') -%}
+                {{ bag('translate', this.alt, 'hefeed_keywords') }}
+              {%- else -%}
+                Waffel, C3WOC, CCC, Chaos, Waffle, Waffles, Waffeln, VOC, WOC, Operation, Center
+              {%- endif -%}
+            </itunes:keywords>
+{#  #}      <itunes:explicit>no</itunes:explicit>
+{#  #}      <itunes:owner>
+{#  #}        <itunes:name>L3D</itunes:name>
+{#  #}        <itunes:email>l3d@c3woc.de</itunes:email>
+{#  #}      </itunes:owner>
+{#  #}      <itunes:image href="{{ baseurl }}/eisen/c3woc-podcastlogo.svg" />
+{#  #}      <itunes:new-feed-url>{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
+{#  #}      <itunes:block>no</itunes:block>
+{#  #}      <itunes:category text="Waffel">
+{#  #}        <itunes:category text="Chaos"/>
+{#  #}        <itunes:category text="CCC"/>
+{#  #}      </itunes:category>
+          {%- endif %}
+          {%- set firstrun = false %}
 {#  #}    <item>
 {#  #}      <title>{{ page.title }}</title>
 {#  #}      <link>{{ baseurl }}/{{ search }}/{{ page._id }}/</link>
@@ -68,13 +73,13 @@
 {#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" length="2307405" type="audio/mpeg"/>
 {#  #}      <guid isPermaLink="false">{{ page._id }}</guid> 
 {#  #}      <itunes:explicit>no</itunes:explicit>
-{#  #}      <content type="{% if page.xml_img %}html{% else %}text{% endif %}">
+{#  #}      <content type="html">
               {{ page.xml }} 
             {%- if page.xml_img -%}
               &lt;img width=&quot;23%&quot; src=&quot;{{ page.xml_img }}&quot; /&gt;
             {% endif %}
               &lt;br/&gt;&lt;a href="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" class="button special primary" download&gt;{{ page.shorttitle }} - MP3 Downloaded&lt;/a&gt;
-            </content>
+{#  #}      </content>
 {#  #}    </item>
         {%- endif -%}
       {%- endfor %}
