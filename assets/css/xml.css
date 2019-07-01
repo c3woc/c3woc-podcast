@@ -18,13 +18,18 @@ item {
   background-color:whitesmoke;
 }
 
+.itunes_author {  display:none; }
+
 /* single items */
 title {
+  display:block;
   color: #ee7402;
   font-size: 120%;
 }
 title:before,
-link:after{
+link:after,
+.itunes_subtitle:after,
+.itunes_subtitle:before{
   content: '\a';
   white-space: pre;
 }
@@ -40,21 +45,24 @@ link:before{ content: "Link: "; }
 description{
   color: #f94f22;
 }
-language:before{ content:" In "; }
-language:after{ content:"utscher Sprache."; }
-description:before{ content: "Beschreibung:"; }
+language:before{ content:" (In "; }
+language:after{ content:"utscher Sprache)"; }
+description:before{ content: "Beschreibung: "; }
 id,
 copyright,
 generator,
 updated,
 pubDate,
+.itunes_summary,
+.itunes_keywords,
+.itunes_explicit,
+.itunes_owner,
 lastBuildDate{ display: none; }
-itunes\:owner{ display: none; }
 name {color:red; text-decoration: underline}
 price {color:green}
 stock {color:brown}
 country {color:blue}
-
+.itunes_subtitle{ font-size: 70%;}
 /* IE supports the ID selector also for XML */
 product#p4 {text-align:right}
 /* Alternative in: Firefox, Opera, Google Chrome *

@@ -40,24 +40,24 @@ type="text/css"?>
           {%- if firstrun == true %}
 {#  #}    <pubDate>2019-06-14T00:42:23Z</pubDate>
 {#  #}    <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
-{#  #}    <itunes:author>L3D</itunes:author>
-{#  #}    <itunes:subtitle>Der Podcast des CCC Waffel Operation Center</itunes:subtitle>
-{#  #}    <itunes:summary>
+{#  #}    <itunes:author class="itunes_author">L3D</itunes:author>
+{#  #}    <itunes:subtitle class="itunes_subtitle">Der Podcast des CCC Waffel Operation Center</itunes:subtitle>
+{#  #}    <itunes:summary class="itunes_summary">
             {%- if bag('translate', this.alt, 'hefeed_description') -%}
               {{ bag('translate', this.alt, 'hefeed_description') }}
             {%- else -%}
               Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
             {%- endif -%}
           </itunes:summary>
-{#  #}    <itunes:keywords>
+{#  #}    <itunes:keywords class="itunes_keywords">
             {%- if bag('translate', this.alt, 'hefeed_keywords') -%}
               {{ bag('translate', this.alt, 'hefeed_keywords') }}
             {%- else -%}
               Waffel, C3WOC, CCC, Chaos, Waffle, Waffles, Waffeln, VOC, WOC, Operation, Center
             {%- endif -%}
           </itunes:keywords>
-{#  #}    <itunes:explicit>no</itunes:explicit>
-{#  #}    <itunes:owner>
+{#  #}    <itunes:explicit class="itunes_explicit">no</itunes:explicit>
+{#  #}    <itunes:owner class="itunes_owner">
 {#  #}      <itunes:name>L3D</itunes:name>
 {#  #}      <itunes:email>l3d@c3woc.de</itunes:email>
 {#  #}    </itunes:owner>
