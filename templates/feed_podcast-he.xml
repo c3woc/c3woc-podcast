@@ -61,7 +61,7 @@ type="text/css"?>
 {#  #}      <itunes:name>L3D</itunes:name>
 {#  #}      <itunes:email>l3d@c3woc.de</itunes:email>
 {#  #}    </itunes:owner>
-{#  #}    <itunes:image href="{{ baseurl }}/eisen/he01/c3woc-podcastlogo.svg.png" class="itunes_feed_image"></itunes:image>
+{#  #}    <itunes:image href="{{ baseurl }}/images/podcastlogo.png" class="itunes_feed_image"></itunes:image>
 {#  #}    <itunes:new-feed-url class="itunes_new-feed-url">{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
 {#  #}    <itunes:block class="itunes_block">no</itunes:block>
 {#  #}    <itunes:category text="Waffel">

@@ -69,8 +69,10 @@ country {color:blue;}
 }
 .itunes_block{
   content: '\a\a\a\a\a\a\a\a\a\a';
-  padding: 256px;
-  background: orange url("/eisen/he01/c3woc-podcastlogo.svg") no-repeat;
+  padding: 64px;
+  float: right;
+  margin: 4px;
+  background: url("/images/podcast.min.png") no-repeat;
   color: rgba(0,0,0,0);
 }
 .itunes_subtitle{ font-size: 70%;}
