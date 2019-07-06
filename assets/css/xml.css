@@ -18,8 +18,6 @@ item {
   background-color:whitesmoke;
 }
 
-.itunes_author {  display:none; }
-
 /* single items */
 title {
   display:block;
@@ -29,11 +27,13 @@ title {
 title:before,
 link:after,
 .itunes_subtitle:after,
-.itunes_subtitle:before{
+.itunes_subtitle:before,
+content:before{
   content: '\a';
   white-space: pre;
 }
-title:after{
+title:after,
+content:after {
   content: '\a\a';
   white-space: pre;
 }
@@ -58,14 +58,23 @@ pubDate,
 .itunes_explicit,
 .itunes_owner,
 .itunes_new-feed-url,
+.itunes_author,
+guid,
 lastBuildDate{ display: none; }
 name {color:red; text-decoration: underline;}
 price {color:green;}
 stock {color:brown;}
 country {color:blue;}
-.itunes_block:pre{
-  content: '\a\a\a\a\a\a\a\a\a\a';
-  white-space: pre;
+content {
+  color: #424242;
+  background-color: #ccc;
+  display:block;
+  border: 1px solid gray;
+  margin:1em;
+  margin-right: 12em;
+  padding:0.5em;
+  background-color: #ccc;
+  list-style: none;
 }
 .itunes_block{
   content: '\a\a\a\a\a\a\a\a\a\a';

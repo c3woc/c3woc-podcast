@@ -73,7 +73,7 @@ type="text/css"?>
 {#  #}    <item>
 {#  #}      <title>{{ page.title }}</title>
 {#  #}      <link>{{ baseurl }}/{{ search }}/{{ page._id }}/</link>
-{#  #}      <author>
+{#  #}      <author class="itunes_author">
               {%- if page.author -%}
                 {{ page.author }}
               {%- else -%}
@@ -83,7 +83,7 @@ type="text/css"?>
 {#  #}      <pubDate>{{ page.pub_date|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</pubDate>
 {#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" length="2307405" type="audio/mpeg"/>
 {#  #}      <guid isPermaLink="false">{{ page._id }}</guid> 
-{#  #}      <itunes:explicit>no</itunes:explicit>
+{#  #}      <itunes:explicit class="itunes_explicit">no</itunes:explicit>
 {#  #}      <content type="html">
               {{ page.xml }} 
             {%- if page.xml_img -%}
