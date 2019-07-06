@@ -81,8 +81,9 @@ type="text/css"?>
               {%- endif -%}
             </author>
 {#  #}      <pubDate>{{ page.pub_date|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</pubDate>
-{#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" length="2307405" type="audio/mpeg"/>
+{#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" type="audio/mpeg"/>
 {#  #}      <guid isPermaLink="false">{{ page._id }}</guid> 
+{#  #}      <download>{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}</download>
 {#  #}      <itunes:explicit class="itunes_explicit">no</itunes:explicit>
 {#  #}      <content type="html">
               {{ page.xml }} 

@@ -25,7 +25,6 @@ title {
   font-size: 120%;
 }
 title:before,
-link:after,
 .itunes_subtitle:after,
 .itunes_subtitle:before,
 content:before{
@@ -33,15 +32,19 @@ content:before{
   white-space: pre;
 }
 title:after,
+link:after,
+download:after,
 content:after {
   content: '\a\a';
   white-space: pre;
 }
-link{
+link,
+download{
   color: navy;
   text-decoration: underline;
 } 
 link:before{ content: "Link: "; }
+download:before{ content: "Download: "; }
 description{
   color: #f94f22;
 }
