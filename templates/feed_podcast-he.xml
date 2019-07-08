@@ -64,10 +64,7 @@ type="text/css"?>
 {#  #}    <itunes:image href="{{ baseurl }}/images/podcast.itunes.svg.png" class="itunes_feed_image"></itunes:image>
 {#  #}    <itunes:new-feed-url class="itunes_new-feed-url">{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
 {#  #}    <itunes:block class="itunes_block">no</itunes:block>
-{#  #}    <itunes:category text="Waffel">
-{#  #}      <itunes:category text="Chaos"/>
-{#  #}      <itunes:category text="CCC"/>
-{#  #}    </itunes:category>
+{#  #}    <itunes:category text="Waffel">Waffel, Chaos, CCC, Waffles</itunes:category>
         {%- endif %}
         {%- set firstrun = false %}
 {#  #}    <item>
