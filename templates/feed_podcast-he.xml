@@ -64,7 +64,8 @@ type="text/css"?>
 {#  #}    <itunes:image href="{{ baseurl }}/images/podcast.itunes.svg.png" class="itunes_feed_image"></itunes:image>
 {#  #}    <itunes:new-feed-url class="itunes_new-feed-url">{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
 {#  #}    <itunes:block class="itunes_block">no</itunes:block>
-{#  #}    <itunes:category text="Waffel">Waffel, Chaos, CCC, Waffles</itunes:category>
+{#  #}    <itunes:category text="Technology">Technology</itunes:category>
+{#  #}    <category>Waffles</category>
         {%- endif %}
         {%- set firstrun = false %}
 {#  #}    <item>
@@ -78,7 +79,7 @@ type="text/css"?>
               {%- endif -%}
             </author>
 {#  #}      <pubDate>{{ page.pub_date|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</pubDate>
-{#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" type="audio/mpeg"/>
+{#  #}      <enclosure url="{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}" type="audio/mpeg" length="1024"/>
 {#  #}      <guid isPermaLink="false">{{ page._id }}</guid> 
 {#  #}      <download>{{ baseurl }}/{{ search }}/{{ page._id }}/{{ page.podcastmp3 }}</download>
 {#  #}      <itunes:explicit class="itunes_explicit">no</itunes:explicit>
