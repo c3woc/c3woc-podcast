@@ -12,7 +12,7 @@
     "{{ '/css/xml.min.css'|asseturl }}"
   {%- endif -%}
 type="text/css"?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title type="text">
       {%- if bag('translate', this.alt, 'hefeed') -%}
@@ -21,27 +21,40 @@ type="text/css"?>
         Das heisse Eisen
       {%- endif -%}</title>
     <link>{{ baseurl }}/</link>
-    <id>{{ baseurl }}/podcast-he.xml</id>
-    <description>
-      {%- if bag('translate', this.alt, 'hefeed_description') -%}
-        {{ bag('translate', this.alt, 'hefeed_description') }}
-      {%- else -%}
-        Der Waffelpodcast: 'Das heisse Eisen'. Mit Venty und L3D.
-      {%- endif -%}
-    </description>
-    <generator>Von Hand als Jinja2 Template von L3D geschrieben</generator>
     <language>de</language>
-    <copyright>L3D</copyright>
+    <copyright>>&#169; 2019 L3D</copyright>
+    <itunes:author class="itunes_author">L3D und Venty</itunes:author>
+    <description>
+      {%- if bag('translate', this.alt, 'hefeed_description') %}
+        {{ bag('translate', this.alt, 'hefeed_description') }}
+      {%- else %}
+        Der Waffelpodcast: 'Das heisse Eisen'.
+        Venty und L3D erzählen euch alles, was man über
+        Waffeln wissen muss.
+      {%- endif %}
+    </description>
+    <itunes:type class="itunes_serial">serial</itunes:type>
+    <itunes:owner class="itunes_owner">
+      <itunes:name>L3D</itunes:name>
+      <itunes:email>l3d@c3woc.de</itunes:email>
+    </itunes:owner>
+    <itunes:image href="{{ baseurl }}/images/podcast.itunes.svg.png" class="itunes_feed_image"></itunes:image>
+    <id>{{ baseurl }}/podcast-he.xml</id>
+    <itunes:category text="Education">
+      <itunes:category text="Technology"/>
+      <itunes:category text="Science"/>
+    </itunes:category>
+    <itunes:explicit class="itunes_explicit">no</itunes:explicit>
+    <generator>Von Hand als Jinja2 Template von L3D geschrieben</generator>
     <updated>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</updated>
+    <pubDate>2019-06-14T00:42:23Z</pubDate>
+    <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
+    <itunes:subtitle class="itunes_subtitle">Der Podcast des CCC Waffel Operation Center</itunes:subtitle>
       {%- set pages = site.query('/eisen').include_undiscoverable(true).all() -%}
       {%- set firstrun = true %}
       {%- for page in pages -%}
         {%- if not page._hidden %}
           {%- if firstrun == true %}
-{#  #}    <pubDate>2019-06-14T00:42:23Z</pubDate>
-{#  #}    <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
-{#  #}    <itunes:author class="itunes_author">L3D</itunes:author>
-{#  #}    <itunes:subtitle class="itunes_subtitle">Der Podcast des CCC Waffel Operation Center</itunes:subtitle>
 {#  #}    <itunes:summary class="itunes_summary">
             {%- if bag('translate', this.alt, 'hefeed_description') -%}
               {{ bag('translate', this.alt, 'hefeed_description') }}
@@ -56,12 +69,6 @@ type="text/css"?>
               Waffel, C3WOC, CCC, Chaos, Waffle, Waffles, Waffeln, VOC, WOC, Operation, Center
             {%- endif -%}
           </itunes:keywords>
-{#  #}    <itunes:explicit class="itunes_explicit">no</itunes:explicit>
-{#  #}    <itunes:owner class="itunes_owner">
-{#  #}      <itunes:name>L3D</itunes:name>
-{#  #}      <itunes:email>l3d@c3woc.de</itunes:email>
-{#  #}    </itunes:owner>
-{#  #}    <itunes:image href="{{ baseurl }}/images/podcast.itunes.svg.png" class="itunes_feed_image"></itunes:image>
 {#  #}    <itunes:new-feed-url class="itunes_new-feed-url">{{ baseurl }}/podcast-he.xml</itunes:new-feed-url>
 {#  #}    <itunes:block class="itunes_block">no</itunes:block>
 {#  #}    <itunes:category text="Technology">Technology</itunes:category>

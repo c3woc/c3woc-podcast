@@ -26,16 +26,17 @@ title {
 }
 title:before,
 .itunes_subtitle:after,
-.itunes_subtitle:before,
-content:before{
+description:after,
+.itunes_subtitle:before{
   content: '\a';
   white-space: pre;
 }
 title:after,
 link:after,
 download:after,
-content:after {
-  content: '\a\a';
+content:after,
+content:before{
+  content: '\a \a ';
   white-space: pre;
 }
 link,
@@ -50,7 +51,10 @@ description{
 }
 language:before{ content:" (In "; }
 language:after{ content:"utscher Sprache)"; }
-description:before{ content: "Beschreibung: "; }
+description:before{ 
+  content: "\a \a Beschreibung: ";
+  white-space: pre;
+}
 id,
 copyright,
 generator,
@@ -63,6 +67,7 @@ pubDate,
 .itunes_new-feed-url,
 .itunes_author,
 guid,
+.itunes_serial,
 lastBuildDate{ display: none; }
 name {color:red; text-decoration: underline;}
 price {color:green;}
