@@ -32,14 +32,14 @@
       {% endif %}
     </section>
     {% if from_index %}<center>
-    <a href="{{ post|url }}{{ post.podcastmp3  }}" class="button special primary" download>{{ post.shorttitle }} - MP3 Downloaded</a></center><br/>
+    <a href="{{ post|url }}{{ post.podcastmp3  }}" class="button special primary" download>{{ post.shorttitle }} - MP3 Download</a></center><br/>
     <a class="button fit" href="{{ post|url }}">{% if bag('translate', post.alt, 'blog_weiter')
         %}{{ bag('translate', post.alt, 'blog_weiter') }}{% else        
         %}weiterlesen{% endif %}</a>
     <br/>
     {% else %}<center>
     <a href="{{ post|url }}{{ post.podcastmp3  }}" class="button">{{ post.title }}</a> 
-    <a href="{{ post|url }}{{ post.podcastmp3  }}" class="button special primary" download>{{ post.shorttitle }} - MP3 Downloaded</a></center><br/>
+    <a href="{{ post|url }}{{ post.podcastmp3  }}" class="button special primary" download>{{ post.shorttitle }} - MP3 Download</a></center><br/>
     {% if post.video_is_embeded %}{% for blk in post.video_embeded.blocks %}
       {% if blk.video_url %}
       {{ blk }} <br/>

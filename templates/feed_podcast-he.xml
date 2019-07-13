@@ -50,11 +50,6 @@ type="text/css"?>
     <pubDate>2019-06-14T00:42:23Z</pubDate>
     <lastBuildDate>{{ none|datetimeformat('YYYY-MM-ddThh:mm:ss') }}Z</lastBuildDate>
     <itunes:subtitle class="itunes_subtitle">Der Podcast des CCC Waffel Operation Center</itunes:subtitle>
-      {%- set pages = site.query('/eisen').include_undiscoverable(true).all() -%}
-      {%- set firstrun = true %}
-      {%- for page in pages -%}
-        {%- if not page._hidden %}
-          {%- if firstrun == true %}
 {#  #}    <itunes:summary class="itunes_summary">
             {%- if bag('translate', this.alt, 'hefeed_description') -%}
               {{ bag('translate', this.alt, 'hefeed_description') }}
@@ -73,8 +68,10 @@ type="text/css"?>
 {#  #}    <itunes:block class="itunes_block">no</itunes:block>
 {#  #}    <itunes:category text="Technology">Technology</itunes:category>
 {#  #}    <category>Waffles</category>
-        {%- endif %}
-        {%- set firstrun = false %}
+      {%- set pages = site.query('/eisen').include_undiscoverable(true).all() -%}
+      {%- set firstrun = true %}
+      {%- for page in pages -%}
+        {%- if not page._hidden %}
 {#  #}    <item>
 {#  #}      <title>{{ page.title }}</title>
 {#  #}      <link>{{ baseurl }}/{{ search }}/{{ page._id }}/</link>
@@ -95,10 +92,10 @@ type="text/css"?>
             {%- if page.xml_img -%}
               &lt;img width=&quot;23%&quot; src=&quot;{{ page.xml_img }}&quot; /&gt;
             {% endif %}
-              &lt;br/&gt;&lt;a href="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" class="button special primary" download&gt;{{ page.shorttitle }} - MP3 Downloaded&lt;/a&gt;
+              &lt;br/&gt;&lt;a href="{{ baseurl }}{{ page|url }}{{ page.podcastmp3 }}" class="button special primary" download&gt;{{ page.shorttitle }} - MP3 Download&lt;/a&gt;
 {#  #}      </content>
 {#  #}    </item>
-        {%- endif -%}
+        {%- endif %}
       {%- endfor %}
   </channel>
 </rss>
