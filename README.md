@@ -10,12 +10,10 @@ Diese findet man unter [podcast.c3woc.de](https://podcast.c3woc.de/)
 ------------
 Das CMS für diese Webseite ist [Lektor](https://www.getlektor.com/).
 Die Installationsanleitung gibt es [hier](https://www.getlektor.com/downloads/).
-Lektor ist auch als Python Modul verfügbar und kann mit ``python3 -m lektor`` verwendet werden.
-Auch die Installation über pip *(in einem [virtuellen Enviroment](https://docs.python.org/3/tutorial/venv.html)* ist möglich:
+Lektor ist auch als Python Modul verfügbar und kann mit ``python3 -m lektor`` bzw per Makefile mit ``make server`` verwendet werden.
+Auch die Installation über pip *(in einem [virtuellen Enviroment](https://docs.python.org/3/tutorial/venv.html)* ist möglich. Oder einfach per Makefile:
 ```bash
-virtualenv venv
-. venv/bin/activate
-pip install lektor
+make install
 ```
 
 Zum Starten von Lektor muss man mit der Komandozeile in das root Verzeichnis der Webseite gehen
@@ -29,7 +27,7 @@ bearbeiten, bevor diese Veröffentlicht werden!
  1. Dieses Repository Forken oder einen neuen Branch machen (übers GitHub Interface)
  2. Geforktes Repository Clonen (``git clone https://github.com/<Your_Name>/c3woc-podcast.git``)
  3. Öffne deine Komandozeile im geklonten Repository-Fork (``cd c3woc-podcast``)
- 4. Lektor starten (``python3 -m lektor server``)
+ 4. Lektor starten (``make server``)
  5. Webseite updaten... (``http://localhost:5000/``)
  6. Lektor Beenden (``Strg. + C``)
  7. Änderungen commiten (``git add --all; git commit -m "An der C3WOC Podcast Seite habe ich _____ geändert"``)
