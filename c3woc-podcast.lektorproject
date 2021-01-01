@@ -11,7 +11,7 @@ url_style = absolute
 enabled = yes
 default = yes
 locale = de_DE
-target = rsync://web35@c3woc.de/var/www/podcast.c3woc.de/web
+target = rsync://webwaffelpodcast@podcast.c3woc.de/srv/www/podcast.c3woc.de/
 
 [alternatives.de]
 name = Deutsch
